@@ -1,0 +1,47 @@
+{
+  "IDT": {
+    "sentences": 4910,
+    "tokens": 115990,
+    "subordinate_clauses": 10424,
+    "per_10_sentences": 21.23,
+    "per_100_tokens": 8.99,
+    "strict_excl_xcomp_pred": 8415,
+    "strict_per_10_sentences": 17.14,
+    "strict_per_100_tokens": 7.25,
+    "relative_clauses_per_100_tokens": 1.87,
+    "sentences_with_any_pct": 79.2,
+    "by_relation": {
+      "xcomp": 2965,
+      "acl:relcl": 2174,
+      "xcomp:pred": 2009,
+      "advcl": 1366,
+      "ccomp": 861,
+      "csubj:cop": 604,
+      "csubj:cleft": 356,
+      "acl": 89
+    }
+  },
+  "TwittIrish": {
+    "sentences": 2596,
+    "tokens": 47790,
+    "subordinate_clauses": 2625,
+    "per_10_sentences": 10.11,
+    "per_100_tokens": 5.49,
+    "strict_excl_xcomp_pred": 1924,
+    "strict_per_10_sentences": 7.41,
+    "strict_per_100_tokens": 4.03,
+    "relative_clauses_per_100_tokens": 0.64,
+    "sentences_with_any_pct": 58.2,
+    "by_relation": {
+      "xcomp": 866,
+      "xcomp:pred": 701,
+      "acl:relcl": 308,
+      "advcl": 267,
+      "ccomp": 203,
+      "csubj:cop": 139,
+      "csubj:cleft": 84,
+      "acl": 52,
+      "csubj": 5
+    }
+  }
+}

@@ -279,7 +279,7 @@ def to_markdown(res):
     return "\n".join(out)
 
 
-def main():
+def main():  # noqa: C901
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--idt", required=True)
     ap.add_argument("--twittirish", required=True)

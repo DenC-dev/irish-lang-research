@@ -7,15 +7,19 @@ A research overview, plus a small reproducible analysis, on what computational l
 | Path | Contents |
 |---|---|
 | [`docs/overview.md`](docs/overview.md) | The overview: terms, evidence, methods and resources, limitations, gaps, bibliography. Section 10 answers "is there already a paper on this?" |
-| [`results/treebank_comparison.md`](results/treebank_comparison.md) | Pilot numbers: edited Irish (UD Irish-IDT) against Irish tweets (UD TwittIrish) |
+| [`docs/evolution.md`](docs/evolution.md) | How the written norm, the schools, the spoken language, the technology and the research have changed |
+| [`docs/gaps.md`](docs/gaps.md) | Gap register: 18 gaps with evidence and what would close each |
+| [`results/`](results/) | Pilot numbers: edited Irish against Irish tweets, earlier against later tweet samples, clause density |
 | `src/gaeilge_register/` | Dependency-free Python package that extracts transparent surface features from Irish text |
-| `scripts/compare_treebanks.py` | Regenerates the results from the two public treebanks |
+| `scripts/` | `compare_treebanks.py`, `compare_cohorts.py` and `clause_density.py` regenerate the results from the two public treebanks |
 | `data/examples/` | Constructed example sentences used by the tests. No attested data |
 | [`ETHICS.md`](ETHICS.md) | Data rules for this project |
 
 ## Headline pilot result
 
 After *mo/do*, a lenitable common noun is written without lenition in 3 of 474 cases in edited text and 18 of 177 cases in tweets (10.2%, 95% CI 6.5 to 15.5). The same direction holds for eclipsis after *ár/bhur/i*. This measures distance from the written standard. It does not identify learners, because speaker background is not in the data.
+
+Second result: between the earlier (2009 to 2014) and later (2010 to 2019) tweet samples, missing-fada candidates fall from 0.52% to 0.16% of words and English tokens fall from 6.6% to 5.2%. Public Irish on Twitter moved toward the standard over the 2010s, with caveats in `docs/evolution.md`.
 
 ## Reproduce
 
@@ -25,6 +29,9 @@ Python 3.9 or later, standard library only.
 ./scripts/fetch_ud.sh                       # clones the two treebanks into external/
 python3 -I scripts/compare_treebanks.py \
     --idt external/UD_Irish-IDT \
+    --twittirish external/UD_Irish-TwittIrish --out results
+python3 -I scripts/compare_cohorts.py --twittirish external/UD_Irish-TwittIrish --out results
+python3 -I scripts/clause_density.py --idt external/UD_Irish-IDT \
     --twittirish external/UD_Irish-TwittIrish --out results
 python3 -m unittest discover -s tests
 ```

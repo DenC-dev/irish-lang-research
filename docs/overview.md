@@ -1,6 +1,6 @@
 # Contemporary Irish, Gaelscoileanna and the Internet: A Computational-Linguistics Overview
 
-*Version 0.1, 16 November 2026. Literature located by web search on that date; see section 10 for what that search could and could not cover.*
+*Version 0.2, 16 November 2026. Literature located by web search on that date; see section 10 for what that search could and could not cover. Continued in [`evolution.md`](evolution.md) (how the language, schools, technology and research have changed) and [`gaps.md`](gaps.md) (full gap register).*
 
 ## How to read the evidence labels
 
@@ -99,7 +99,7 @@ That last point matters most for this overview. Online corpora record text, and 
 | **Language models** | gaBERT, 7.9m sentences (Barry et al. 2022); UCCIX on Llama 2 (Tran et al. 2024); Qomhrá (McInerney et al. 2026) | Parsing gains (+10 LAS on tweets); surprisal or probing as a measure of distance from the standard | Training text is web crawl, Wikipedia, parallel and official text; Qomhrá's instruction data is LLM-translated |
 | **Model evaluation** | Irish-BLiMP, 1,020 minimal pairs: humans 90.1%, best model 73.5% (McGiff et al. 2025); IRLBench from Leaving Certificate papers (2025) | Which grammatical contrasts models do and do not control | Standard grammar only; fluent human raters; no dialect or informal items |
 | **Machine translation** | English-Irish NMT with human evaluation (Dowling 2022; Lankford, Afli and Way 2024) | Error typologies by fluency and accuracy | Training data dominated by public-administration translation |
-| **Speech** | ABAIR synthesis and recognition; Fotheidil transcription (Lonergan et al. 2022, 2023, 2024) | Dialect identification and dialect-wise error rates | Accuracy uneven across dialects even with balanced data; child speech only starting to be collected (Ulster University n.d.) |
+| **Speech** | ABAIR synthesis and recognition; Fotheidil transcription (Lonergan et al. 2022, 2023, 2024) | Dialect identification and dialect-wise error rates | Accuracy uneven across dialects even with balanced data; very little child speech data (Ulster University n.d.) |
 
 Three method-level observations.
 
@@ -147,7 +147,7 @@ How to read this:
 - No open corpus of children's written or typed Irish exists. The largest public children's text is the 1930s Schools' Collection (Ward 2025), which is a historical source.
 - The spoken immersion corpus is small, dated and not public.
 - No longitudinal data follow the same pupils from primary through post-primary or into adult use.
-- Child speech is only now being collected for speech recognition, starting with child-directed speech in the home (Ulster University n.d.).
+- Child speech data is very small. A CHILDES corpus follows one first-language Gaeltacht child (Cameron-Faulkner and Hickey 2011), and a new project is collecting child-directed speech in the home for speech recognition (Ulster University n.d.). Nothing comparable exists for immersion pupils. (Corrected in version 0.2; see `gaps.md`.)
 
 ### Privacy and ethics
 

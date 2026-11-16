@@ -1,0 +1,234 @@
+{
+  "n": {
+    "LTC": {
+      "tweets": 1299,
+      "tokens": 22902
+    },
+    "NTC": {
+      "tweets": 1297,
+      "tokens": 24888
+    }
+  },
+  "measures": [
+    {
+      "measure": "Tweets with at least one English-tagged token",
+      "LTC": [
+        317,
+        1299,
+        [
+          22.1,
+          26.8
+        ]
+      ],
+      "NTC": [
+        262,
+        1297,
+        [
+          18.1,
+          22.5
+        ]
+      ],
+      "p": 0.0101
+    },
+    {
+      "measure": "Tweets with a code-switch type annotation",
+      "LTC": [
+        110,
+        1299,
+        [
+          7.1,
+          10.1
+        ]
+      ],
+      "NTC": [
+        51,
+        1297,
+        [
+          3.0,
+          5.1
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "Tweets with at least one corrected form",
+      "LTC": [
+        350,
+        1299,
+        [
+          24.6,
+          29.4
+        ]
+      ],
+      "NTC": [
+        233,
+        1297,
+        [
+          16.0,
+          20.1
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "English share of language-tagged tokens",
+      "LTC": [
+        1074,
+        16369,
+        [
+          6.2,
+          7.0
+        ]
+      ],
+      "NTC": [
+        916,
+        17505,
+        [
+          4.9,
+          5.6
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "SYM (emoji, symbols) share of tokens",
+      "LTC": [
+        903,
+        22902,
+        [
+          3.7,
+          4.2
+        ]
+      ],
+      "NTC": [
+        1410,
+        24888,
+        [
+          5.4,
+          6.0
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "Words with a corrected form",
+      "LTC": [
+        576,
+        19040,
+        [
+          2.8,
+          3.3
+        ]
+      ],
+      "NTC": [
+        347,
+        20278,
+        [
+          1.5,
+          1.9
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "Corrected forms that differ only in diacritics",
+      "LTC": [
+        250,
+        576,
+        [
+          39.4,
+          47.5
+        ]
+      ],
+      "NTC": [
+        132,
+        347,
+        [
+          33.1,
+          43.3
+        ]
+      ],
+      "p": 0.1091
+    },
+    {
+      "measure": "Words carrying a fada",
+      "LTC": [
+        3994,
+        16167,
+        [
+          24.0,
+          25.4
+        ]
+      ],
+      "NTC": [
+        4759,
+        17070,
+        [
+          27.2,
+          28.6
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "Missing-fada candidates (30-word list)",
+      "LTC": [
+        84,
+        16167,
+        [
+          0.4,
+          0.6
+        ]
+      ],
+      "NTC": [
+        28,
+        17070,
+        [
+          0.1,
+          0.2
+        ]
+      ],
+      "p": 0.0
+    },
+    {
+      "measure": "English discourse markers (8-word list)",
+      "LTC": [
+        17,
+        16167,
+        [
+          0.1,
+          0.2
+        ]
+      ],
+      "NTC": [
+        11,
+        17070,
+        [
+          0.0,
+          0.1
+        ]
+      ],
+      "p": 0.201
+    },
+    {
+      "measure": "Listed initialisms (GRMA etc.)",
+      "LTC": [
+        14,
+        16167,
+        [
+          0.1,
+          0.1
+        ]
+      ],
+      "NTC": [
+        21,
+        17070,
+        [
+          0.1,
+          0.2
+        ]
+      ],
+      "p": 0.3061
+    }
+  ]
+}
