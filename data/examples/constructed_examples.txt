@@ -1,0 +1,13 @@
+# Constructed sentences, written for this repository to exercise the rules.
+# They are NOT attested data and are not quotations from any child or adult.
+# Format: label <TAB> sentence
+standard	Is múinteoir é mo chara agus tá sé ina chónaí i nGaillimh.
+standard	Chuaigh ár dteaghlach go dtí an siopa inné.
+copula_candidate	Tá sé múinteoir sa scoil.
+lenition_candidate	Chonaic mé mo cara ag an scoil.
+eclipsis_candidate	Tá ár teach in aice leis an bpáirc.
+discourse_markers	Tá mé just ag caint le mo chara, like, so beidh mé déanach.
+no_fada	Ta me go maith, slan anois.
+abbreviation	GRMA as an gcabhair!
+mixed_intensifier	Bhí an-time againn aréir.
+elongation	Tá sé go haaaalainn!
