@@ -1,4 +1,8 @@
-# Contemporary Irish, Gaelscoileanna and the Internet
+# Síneadh
+
+*Contemporary Irish, Gaelscoileanna and the internet, from a computational linguistics angle.*
+
+*Síneadh* is Irish for lengthening or extension. The *síneadh fada* is the length mark on a vowel, and its presence or absence turned out to be the most reliable signal in the data.
 
 A research overview, plus a small reproducible analysis, on what computational linguistics can currently say about Irish as acquired in Irish-medium schools and Irish as written online.
 
@@ -6,6 +10,8 @@ A research overview, plus a small reproducible analysis, on what computational l
 
 | Path | Contents |
 |---|---|
+| [`paper/sineadh.pdf`](paper/sineadh.pdf) | The working paper (source in `paper/sineadh.md`, build with `paper/build.sh`) |
+| [`docs/index.html`](docs/index.html) | Project website, a single self-contained page. To host it on GitHub Pages, set Pages to serve the `main` branch from `/docs` |
 | [`docs/overview.md`](docs/overview.md) | The overview: terms, evidence, methods and resources, limitations, gaps, bibliography. Section 10 answers "is there already a paper on this?" |
 | [`docs/evolution.md`](docs/evolution.md) | How the written norm, the schools, the spoken language, the technology and the research have changed |
 | [`docs/gaps.md`](docs/gaps.md) | Gap register: 18 gaps with evidence and what would close each |
