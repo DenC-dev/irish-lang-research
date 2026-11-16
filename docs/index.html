@@ -5,218 +5,315 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Síneadh: school-acquired and online Irish, measured</title>
 <meta name="description" content="A working paper and open code on what computational linguistics can and cannot yet say about Irish learned in Irish-medium schools and Irish written online.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
-  --paper:#f6f1e7; --ink:#1d2421; --muted:#5d665f; --rule:#d8cfbd;
-  --card:#fffaf0; --accent:#9a3b1f; --accent-2:#2f5d57; --bar-a:#2f5d57; --bar-b:#c9713f;
-}
-@media (prefers-color-scheme: dark){
-  :root{--paper:#141917; --ink:#ece6d8; --muted:#a3aaa2; --rule:#2e3733;
-    --card:#1b2220; --accent:#e58a5e; --accent-2:#7fb8ae; --bar-a:#7fb8ae; --bar-b:#e58a5e;}
+  --paper:#F6F8FB; --ink:#14213D; --feint:#A9C1DF; --margin:#D4343F;
+  --hi:#FFE14D; --biro:#3E6FB0; --quiet:#55617A;
+  --serif:"Gentium Book Plus",Georgia,serif;
+  --sans:"Atkinson Hyperlegible",Verdana,sans-serif;
+  --gutter:13.5rem; --line:4rem;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);
-  font:17px/1.6 Georgia,"Iowan Old Style","Palatino Linotype",serif}
-a{color:var(--accent);text-underline-offset:3px}
-a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
-.wrap{max-width:960px;margin:0 auto;padding:0 22px}
-.sans{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-nav{position:sticky;top:0;background:var(--paper);border-bottom:1px solid var(--rule);z-index:5}
-nav .wrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;font-size:14px}
-nav a{color:var(--muted);text-decoration:none}
-nav a:hover{color:var(--ink)}
-nav .brand{font:600 17px Georgia,serif;color:var(--ink);margin-right:auto}
-header{padding:72px 0 44px;border-bottom:1px solid var(--rule)}
-.mark{font-size:clamp(64px,13vw,150px);line-height:.95;margin:0;letter-spacing:-.02em;font-weight:400}
-.mark span{color:var(--accent)}
-.gloss{color:var(--muted);font-style:italic;margin:10px 0 26px}
-.lede{font-size:clamp(20px,2.6vw,26px);line-height:1.4;max-width:30em;margin:0 0 26px}
-.btns{display:flex;gap:12px;flex-wrap:wrap}
-.btn{display:inline-block;padding:10px 16px;border:1px solid var(--ink);color:var(--ink);text-decoration:none;font-size:15px;border-radius:2px}
-.btn.primary{background:var(--ink);color:var(--paper)}
-.btn:hover{border-color:var(--accent);}
-.status{margin-top:26px;padding:12px 14px;border-left:3px solid var(--accent);background:var(--card);font-size:14.5px;color:var(--muted);max-width:46em}
-section{padding:56px 0;border-bottom:1px solid var(--rule)}
-h2{font-size:30px;font-weight:400;margin:0 0 6px;line-height:1.2}
-.kicker{font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2);margin:0 0 8px}
-.sub{color:var(--muted);max-width:42em;margin:0 0 30px}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
-.card{background:var(--card);border:1px solid var(--rule);padding:22px;border-radius:3px}
-.card h3{font-size:19px;font-weight:600;margin:0 0 4px;line-height:1.3}
-.card p{margin:8px 0 0;font-size:15.5px}
-.num{font-size:44px;line-height:1;margin:14px 0 2px;font-variant-numeric:tabular-nums}
-.num small{font-size:16px;color:var(--muted)}
-.bars{margin:16px 0 4px;font-size:13px}
-.row{display:grid;grid-template-columns:92px 1fr 54px;align-items:center;gap:8px;margin:6px 0}
-.track{background:var(--rule);height:12px;border-radius:1px;overflow:hidden}
-.fill{height:100%;background:var(--bar-a)}
-.fill.b{background:var(--bar-b)}
-.row b{font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
-.note{font-size:13.5px;color:var(--muted);margin-top:10px}
-.two{display:grid;gap:34px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-ol.time{list-style:none;margin:0;padding:0;border-left:2px solid var(--rule)}
-ol.time li{padding:0 0 16px 18px;position:relative;font-size:15.5px}
-ol.time li::before{content:"";position:absolute;left:-6px;top:9px;width:10px;height:10px;border-radius:50%;background:var(--accent-2)}
-ol.time b{display:block;font-size:13px;color:var(--muted);font-weight:600}
-table{border-collapse:collapse;width:100%;font-size:15px}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--rule);vertical-align:top}
-th{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
-td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.tablewrap{overflow-x:auto}
-ul.plain{padding-left:20px;margin:0}
-ul.plain li{margin:8px 0}
-details{border-top:1px solid var(--rule);padding:12px 0}
-details:last-of-type{border-bottom:1px solid var(--rule)}
-summary{cursor:pointer;font-weight:600}
-details p{margin:8px 0 0;color:var(--muted);font-size:15.5px}
-pre{background:var(--card);border:1px solid var(--rule);padding:14px;overflow-x:auto;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;border-radius:3px}
-footer{padding:36px 0 60px;color:var(--muted);font-size:14px}
-@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.0625rem/1.6 var(--sans)}
+a{color:var(--ink);text-decoration-color:var(--biro);text-decoration-thickness:2px;text-underline-offset:3px}
+a:hover{text-decoration-color:var(--margin)}
+:focus-visible{outline:3px solid var(--biro);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15;margin:0}
+h2{font-size:2.1rem;max-width:22ch}
+h3{font-size:1.35rem}
+p{margin:0}
+i,em{font-family:var(--serif);font-size:1.06em}
+
+/* The copybook: a red margin rule with the section list in the margin */
+.page{position:relative;max-width:74rem;margin:0 auto}
+.page::before{content:"";position:absolute;top:0;bottom:0;left:var(--gutter);width:2px;background:var(--margin);opacity:.75}
+.marginalia{position:fixed;top:0;width:var(--gutter);padding:2.2rem 1.4rem 0 1.6rem}
+.marginalia .name{font:400 1.9rem/1 var(--serif);text-decoration:none;display:block;margin-bottom:.3rem}
+.marginalia .gloss{font-size:.85rem;color:var(--quiet);line-height:1.4;margin-bottom:1.6rem}
+.marginalia ul{list-style:none;margin:0;padding:0;font-size:.95rem}
+.marginalia li{margin:.45rem 0}
+.marginalia li a{text-decoration:none;color:var(--quiet)}
+.marginalia li a:hover{color:var(--ink);text-decoration:underline;text-decoration-color:var(--margin)}
+main{margin-left:var(--gutter);padding:0 2.2rem 0 3rem}
+main > section{padding:4.5rem 0 0}
+.measure{max-width:38rem}
+.measure p + p{margin-top:1rem}
+
+/* Opening: the ruled line */
+main > section.opening{padding-top:2.2rem}
+.opening h1{font-size:clamp(2.2rem,4.6vw,3.5rem);max-width:17ch}
+.opening .lede{margin-top:1.3rem;font-size:1.15rem;max-width:36rem}
+.ruled{margin-top:2.6rem;
+  background-image:linear-gradient(to bottom,transparent calc(var(--line) - 1px),var(--feint) calc(var(--line) - 1px));
+  background-size:100% var(--line)}
+.ruled .row{min-height:var(--line);display:flex;align-items:flex-end;gap:1rem;padding-bottom:.42rem;flex-wrap:wrap}
+.ruled .who{flex:0 0 9.5rem;font-size:.9rem;color:var(--quiet);padding-bottom:.35rem}
+.ruled .text,.ruled input{font:400 2rem/1.1 var(--serif);color:var(--ink);flex:1 1 16rem;min-width:0}
+.ruled input{border:0;background:transparent;padding:0;width:100%}
+.ruled input:focus-visible{outline:none;box-shadow:0 3px 0 var(--biro)}
+mark{background:linear-gradient(100deg,transparent 0 2%,var(--hi) 4% 96%,transparent 98%);color:inherit;padding:0 .12em;border-radius:.2em .5em .3em .45em}
+.notes{margin:1.4rem 0 0;padding:0;list-style:none;max-width:40rem;font-size:.98rem}
+.notes li{padding:.3rem 0 .3rem 1.3rem;position:relative}
+.notes li::before{content:"";position:absolute;left:0;top:.82em;width:.7rem;height:.5rem;background:var(--hi);border-radius:2px}
+.notes .none::before{background:var(--feint)}
+.caveat{margin-top:1rem;font-size:.92rem;color:var(--quiet);max-width:40rem}
+
+/* Ledger: edited against tweets */
+.ledger{margin-top:2rem;border-top:2px solid var(--ink)}
+.ledger .item{display:grid;grid-template-columns:minmax(12rem,1.1fr) 2fr;gap:.4rem 2rem;padding:1rem 0;border-bottom:1px solid var(--feint)}
+.ledger .what{font-family:var(--serif);font-size:1.2rem;line-height:1.3}
+.ledger .what small{display:block;font:400 .85rem/1.4 var(--sans);color:var(--quiet);margin-top:.2rem}
+.pair{display:grid;grid-template-columns:4.2rem 1fr 4rem;align-items:center;gap:.6rem;font-size:.92rem}
+.pair + .pair{margin-top:.3rem}
+.bar{height:.7rem;background:var(--ink);min-width:2px}
+.bar.t{background:var(--biro)}
+.pair b{font-variant-numeric:tabular-nums}
+.key{margin-top:.9rem;font-size:.9rem;color:var(--quiet);max-width:40rem}
+
+/* Slope chart and its reading, side by side */
+.drift{display:grid;grid-template-columns:minmax(17rem,26rem) 1fr;gap:2.5rem;align-items:start;margin-top:2rem}
+.drift svg{width:100%;height:auto;font:13px var(--sans)}
+.drift ul{margin:1rem 0 0;padding-left:1.1rem}
+.drift li{margin:.5rem 0}
+
+/* What an unmarked mutation can come from */
+.causes{margin:1.6rem 0 0;padding:0;list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(11.5rem,1fr));gap:0 2rem;max-width:46rem}
+.causes li{font-family:var(--serif);font-size:1.3rem;padding:.55rem 0;border-bottom:1px solid var(--feint)}
+
+/* Two-lane timeline on one axis */
+.lanes{margin-top:2rem;display:grid;grid-template-columns:5.5rem 1fr 1fr;font-size:.98rem}
+.lanes > div{padding:.7rem 1.2rem .7rem 0;border-top:1px solid var(--feint)}
+.lanes > div.head{border-top:2px solid var(--ink);font-family:var(--serif);font-size:1.15rem}
+.lanes .yr{font-variant-numeric:tabular-nums;color:var(--quiet)}
+
+/* Ranked gaps */
+.gaps{margin:2rem 0 0;padding:0;list-style:none;counter-reset:g;max-width:44rem}
+.gaps li{counter-increment:g;display:grid;grid-template-columns:2.6rem 1fr;padding:1.1rem 0;border-top:1px solid var(--feint)}
+.gaps li::before{content:counter(g);font:400 2rem/1 var(--serif);color:var(--biro)}
+.gaps h3{margin-bottom:.3rem}
+.gaps p + p{margin-top:.35rem;color:var(--quiet)}
+
+.limits{margin:1.6rem 0 0;padding-left:1.1rem;max-width:40rem}
+.limits li{margin:.6rem 0}
+pre{margin:1.6rem 0 0;padding:1.1rem 1.2rem;background:var(--ink);color:var(--paper);overflow-x:auto;font:.86rem/1.6 ui-monospace,Menlo,Consolas,monospace;border-radius:2px;max-width:46rem}
+.links{margin:1.4rem 0 0;padding-left:1.1rem}
+.links li{margin:.4rem 0}
+footer{margin:5rem 0 0;padding:1.6rem 0 3.5rem;border-top:2px solid var(--ink);font-size:.9rem;color:var(--quiet);max-width:46rem}
+footer p + p{margin-top:.6rem}
+
+@media (max-width:860px){
+  :root{--gutter:1rem;--line:3.4rem}
+  .marginalia{position:static;width:auto;padding:1.4rem 1.2rem 0 2rem}
+  .marginalia .gloss{margin-bottom:.8rem}
+  .marginalia ul{display:flex;flex-wrap:wrap;gap:.2rem 1.1rem}
+  .marginalia li{margin:0}
+  main{padding:0 1.2rem 0 1rem}
+  main > section{padding-top:3.4rem}
+  .ruled .text,.ruled input{font-size:1.5rem;flex-basis:100%}
+  .ruled .who{flex-basis:100%;padding-bottom:0}
+  .ruled .row{min-height:calc(var(--line) * 2);gap:.2rem}
+  .ledger .item,.drift{grid-template-columns:1fr}
+  .lanes{grid-template-columns:4.4rem 1fr}
+  .lanes > div.head.tools,.lanes > div.empty{display:none}
+  .lanes .head.schools::after{content:" and tools"}
+  h2{font-size:1.75rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 </style>
 </head>
 <body>
+<div class="page">
 
-<nav class="sans" aria-label="Sections">
-  <div class="wrap">
-    <a class="brand" href="#top">Síneadh</a>
-    <a href="#findings">Findings</a>
-    <a href="#evolution">Evolution</a>
-    <a href="#gaps">Gaps</a>
-    <a href="#limits">Limits</a>
-    <a href="#use">Reproduce</a>
-  </div>
+<nav class="marginalia" aria-label="Sections">
+  <a class="name" href="#top">Síneadh</a>
+  <p class="gloss">Irish for lengthening. The <i>síneadh fada</i> is the length mark on a vowel.</p>
+  <ul>
+    <li><a href="#measured">What was measured</a></li>
+    <li><a href="#drift">Change over the 2010s</a></li>
+    <li><a href="#cannot">What it can't tell you</a></li>
+    <li><a href="#timeline">Schools and tools</a></li>
+    <li><a href="#gaps">Open questions</a></li>
+    <li><a href="#limits">Limits</a></li>
+    <li><a href="#run">Run it yourself</a></li>
+  </ul>
 </nav>
 
-<header id="top">
-  <div class="wrap">
-    <h1 class="mark">S<span>í</span>neadh</h1>
-    <p class="gloss">Irish, noun: lengthening, extension. The <em>síneadh fada</em> is the length mark on a vowel.</p>
-    <p class="lede">What can computational linguistics say about Irish learned in Irish-medium schools and Irish written online, and where does the evidence stop?</p>
-    <div class="btns sans">
-      <a class="btn primary" href="https://github.com/DenC-dev/irish-lang-research/blob/main/paper/sineadh.pdf">Read the working paper (PDF)</a>
-      <a class="btn" href="https://github.com/DenC-dev/irish-lang-research">Code and data pointers</a>
-    </div>
-    <p class="status sans"><strong>Status:</strong> undergraduate working paper, version 0.3 (16 November 2026). Not peer reviewed, and not yet checked by a fluent Irish speaker. Literature search, code and drafting were done with an AI assistant under the author's direction.</p>
+<main id="top">
+
+<section class="opening">
+  <h1>How far does typed Irish sit from the written standard?</h1>
+  <p class="lede">Síneadh is a working paper and a small set of open rules for measuring that distance in Irish learned at school and Irish written online. Read <a href="https://github.com/DenC-dev/irish-lang-research/blob/main/paper/sineadh.pdf">the paper</a> or get <a href="https://github.com/DenC-dev/irish-lang-research">the code</a>.</p>
+
+  <div class="ruled">
+    <div class="row"><span class="who">Edited prose</span><span class="text" lang="ga">Bhí mo chara ag ár dteach inné.</span></div>
+    <div class="row"><label class="who" for="try">Type your own</label><input id="try" lang="ga" type="text" value="Bhi mo cara ag ár teach inne." autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+    <div class="row"><span class="who">What the rules notice</span><span class="text" id="out" lang="ga" aria-live="polite"><mark>Bhi</mark> mo <mark>cara</mark> ag ár <mark>teach</mark> <mark>inne</mark>.</span></div>
   </div>
-</header>
 
-<section id="findings">
-  <div class="wrap">
-    <p class="kicker sans">Three pilot findings</p>
-    <h2>Distance from the written standard is easy to measure</h2>
-    <p class="sub">Each result comes from running the same transparent rules over two public treebanks: 4,910 sentences of edited Irish and 2,596 Irish tweets posted from 2009 to 2019.</p>
+  <ul class="notes" id="notes">
+    <li><i>Bhi</i> and <i>inne</i>: the length mark is missing (<i>bhí</i>, <i>inné</i>).</li>
+    <li><i>cara</i> after <i>mo</i>: the standard writes lenition (<i>chara</i>).</li>
+    <li><i>teach</i> after <i>ár</i>: the standard writes eclipsis (<i>dteach</i>).</li>
+  </ul>
+  <p class="caveat">Both sentences are made up for this page: "My friend was at our house yesterday." The rules compare text with the written standard, so they also flag some forms that are normal in a dialect. They are not for grading anyone's Irish.</p>
+</section>
 
-    <div class="grid">
-      <article class="card">
-        <h3>Tweets skip initial mutations about ten times as often</h3>
-        <div class="num">10.2% <small>vs 0.6%</small></div>
-        <div class="bars sans" role="img" aria-label="Lenition left unmarked after mo or do: edited text 0.6 percent, tweets 10.2 percent">
-          <div class="row"><span>Edited</span><div class="track"><div class="fill" style="width:6%"></div></div><b>0.6%</b></div>
-          <div class="row"><span>Tweets</span><div class="track"><div class="fill b" style="width:100%"></div></div><b>10.2%</b></div>
-        </div>
-        <p>After <em>mo</em> or <em>do</em>, a noun that should be lenited is written unlenited in 18 of 177 tweet contexts and 3 of 474 edited ones. Eclipsis shows the same direction (5.0% against 0.2%).</p>
-        <p class="note sans">95% interval for tweets: 6.5 to 15.5%. Small counts.</p>
-      </article>
+<section id="measured">
+  <h2>The same rules, run over edited Irish and over tweets</h2>
+  <div class="measure" style="margin-top:1rem">
+    <p>Two public collections: 4,910 sentences of news, fiction, legal and government text, and 2,596 Irish tweets posted between 2009 and 2019.</p>
+  </div>
 
-      <article class="card">
-        <h3>Later tweets are closer to standard spelling</h3>
-        <div class="num">0.52% <small>to 0.16%</small></div>
-        <div class="bars sans" role="img" aria-label="Words missing a length mark: earlier sample 0.52 percent, later sample 0.16 percent">
-          <div class="row"><span>2009–2014</span><div class="track"><div class="fill b" style="width:100%"></div></div><b>0.52%</b></div>
-          <div class="row"><span>2010–2019</span><div class="track"><div class="fill" style="width:31%"></div></div><b>0.16%</b></div>
-        </div>
-        <p>Words missing a length mark fell by two thirds between the earlier and later samples, and English tokens fell from 6.6% to 5.2%. Emoji went up.</p>
-        <p class="note sans">The samples overlap in time and were drawn differently.</p>
-      </article>
-
-      <article class="card">
-        <h3>Tweets carry half the clause density of prose</h3>
-        <div class="num">7.4 <small>vs 17.1</small></div>
-        <div class="bars sans" role="img" aria-label="Subordinate clauses per ten sentences: edited text 17.1, tweets 7.4">
-          <div class="row"><span>Edited</span><div class="track"><div class="fill" style="width:100%"></div></div><b>17.1</b></div>
-          <div class="row"><span>Tweets</span><div class="track"><div class="fill b" style="width:43%"></div></div><b>7.4</b></div>
-        </div>
-        <p>Subordinate clauses per ten sentences or tweets. Relative clauses are about three times as frequent in edited text.</p>
-        <p class="note sans">A register effect: short text hides syntax.</p>
-      </article>
+  <div class="ledger">
+    <div class="item">
+      <div class="what">Lenition left unwritten after <i>mo</i> or <i>do</i><small>3 of 474 places in edited text, 18 of 177 in tweets</small></div>
+      <div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:6%"></div><b>0.6%</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>10.2%</b></div>
+      </div>
     </div>
+    <div class="item">
+      <div class="what">Eclipsis left unwritten after <i>ár</i>, <i>bhur</i> or <i>i</i><small>2 of 881 places in edited text, 7 of 139 in tweets</small></div>
+      <div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:4%"></div><b>0.2%</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>5.0%</b></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="what">Length mark missing<small>From a list of 30 common words, per 1,000 words</small></div>
+      <div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:1.2%"></div><b>0.04</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>3.37</b></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="what">English function words<small>From a short list, per 1,000 words</small></div>
+      <div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:5.8%"></div><b>0.68</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>11.73</b></div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="what">Subordinate clauses<small>Per 10 sentences or tweets</small></div>
+      <div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:100%"></div><b>17.1</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:43%"></div><b>7.4</b></div>
+      </div>
+    </div>
+  </div>
+  <p class="key">Each pair of bars is scaled to its own larger value. The mutation counts are small: the tweet figure for lenition could plausibly lie anywhere from 6.5% to 15.5%.</p>
+</section>
 
-    <p class="status sans" style="margin-top:28px"><strong>What these do not show:</strong> who wrote the tweets. No public corpus of online Irish records whether a writer learned Irish at home, in an Irish-medium school, or as an adult. An unmarked mutation can come from fast typing, autocorrect, an English noun, dialect, informality or incomplete acquisition.</p>
+<section id="drift">
+  <h2>Tweets moved toward the standard over the 2010s</h2>
+  <div class="drift">
+    <svg viewBox="0 0 420 262" role="img" aria-labelledby="dt dd">
+      <title id="dt">Earlier and later tweet samples compared</title>
+      <desc id="dd">English tokens fall from 6.6 to 5.2 percent. Emoji and symbols rise from 3.9 to 5.7 percent. Words needing a corrected form fall from 3.0 to 1.7 percent. Words missing a length mark fall from 0.52 to 0.16 percent.</desc>
+      <g fill="#55617A"><text x="160" y="14" text-anchor="middle">2009 to 2014</text><text x="280" y="14" text-anchor="middle">2010 to 2019</text></g>
+      <g stroke="#A9C1DF" stroke-width="1"><line x1="160" y1="24" x2="160" y2="244"/><line x1="280" y1="24" x2="280" y2="244"/></g>
+      <g stroke-width="2.5" fill="none">
+        <line x1="160" y1="43" x2="280" y2="83" stroke="#14213D"/>
+        <line x1="160" y1="122" x2="280" y2="70" stroke="#3E6FB0"/>
+        <line x1="160" y1="149" x2="280" y2="189" stroke="#14213D"/>
+        <line x1="160" y1="224" x2="280" y2="235" stroke="#14213D"/>
+      </g>
+      <g fill="#14213D">
+        <circle cx="160" cy="43" r="4"/><circle cx="280" cy="83" r="4"/>
+        <circle cx="160" cy="149" r="4"/><circle cx="280" cy="189" r="4"/>
+        <circle cx="160" cy="224" r="4"/><circle cx="280" cy="235" r="4"/>
+      </g>
+      <g fill="#3E6FB0"><circle cx="160" cy="122" r="4"/><circle cx="280" cy="70" r="4"/></g>
+      <g fill="#14213D" text-anchor="end">
+        <text x="150" y="47">English tokens 6.6%</text>
+        <text x="150" y="119">Emoji, symbols 3.9%</text>
+        <text x="150" y="157">Corrected forms 3.0%</text>
+        <text x="150" y="228">Missing mark 0.52%</text>
+      </g>
+      <g fill="#14213D">
+        <text x="290" y="92">5.2%</text><text x="290" y="70">5.7%</text>
+        <text x="290" y="193">1.7%</text><text x="290" y="239">0.16%</text>
+      </g>
+    </svg>
+    <div class="measure">
+      <p>The tweet collection is two samples, one earlier and one later. In the later one, missing length marks fall by two thirds and English falls too. Emoji is the one line going up.</p>
+      <ul>
+        <li>Phones gained Irish keyboards and predictive text over these years, which would produce this pattern.</li>
+        <li>So would more institutions and professionals tweeting in Irish.</li>
+        <li>The samples overlap in time and were drawn in different ways, so this is a lead to follow up.</li>
+      </ul>
+    </div>
   </div>
 </section>
 
-<section id="evolution">
-  <div class="wrap">
-    <p class="kicker sans">How it has evolved</p>
-    <h2>Four things changed at different speeds</h2>
-    <p class="sub">Most confusion about "new Irish" comes from mixing up the written norm, the schools, the spoken language and the tools.</p>
-    <div class="two">
-      <div>
-        <h3>Norm and schools</h3>
-        <ol class="time">
-          <li><b class="sans">1958</b>Official written standard published, then left almost unrevised until 2012 and 2017.</li>
-          <li><b class="sans">1972</b>11 primary and 5 post-primary Irish-medium schools outside the Gaeltacht.</li>
-          <li><b class="sans">2019/20</b>Enrolment outside the Gaeltacht peaks at 48,518 pupils.</li>
-          <li><b class="sans">2023/24</b>46,933 pupils, the first fall in fifty years.</li>
-          <li><b class="sans">2025</b>First State policy for Irish-medium education outside the Gaeltacht. Northern Ireland reaches 7,811 pupils, up from 1,602 in 2001.</li>
-        </ol>
-      </div>
-      <div>
-        <h3>Tools</h3>
-        <ol class="time">
-          <li><b class="sans">2000s</b>Rule-based spelling and grammar checkers; a 30-million-word corpus.</li>
-          <li><b class="sans">2008–09</b>First Irish predictive text on phones.</li>
-          <li><b class="sans">2015–22</b>Annotated tweet corpora, a tweet treebank, a monolingual BERT model.</li>
-          <li><b class="sans">2024</b>First Irish-adapted large language model; national corpus of 101 million words.</li>
-          <li><b class="sans">2025–26</b>Evaluation turn: on one grammar benchmark fluent humans score 90.1% and the best model 73.5%.</li>
-        </ol>
-      </div>
-    </div>
-    <p style="max-width:44em;margin-top:26px">The tools moved from <strong>checking</strong> Irish to <strong>generating</strong> it. Checkers push writers toward the norm. Generators supply a model of the language whose quality depends on training text that practitioners describe as heavily polluted with machine translation.</p>
-    <p class="sans" style="font-size:14.5px"><a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/evolution.md">Full timeline with sources</a></p>
+<section id="cannot">
+  <h2>None of this says who wrote the tweets</h2>
+  <div class="measure" style="margin-top:1rem">
+    <p>No public collection of online Irish records whether a writer grew up with the language, learned it in an Irish-medium school, or picked it up as an adult. A noun written without its mutation can come from any of these:</p>
+  </div>
+  <ul class="causes">
+    <li>Typing fast</li>
+    <li>Autocorrect</li>
+    <li>An English noun</li>
+    <li>A dialect pattern</li>
+    <li>Writing informally</li>
+    <li>Still learning the rule</li>
+  </ul>
+  <div class="measure" style="margin-top:1.4rem">
+    <p>There is also no single "Gaelscoil Irish" to detect. In the main study of pupils' speech, the share of utterances with an error ran from 20.5% in one school to 41.6% in another, and the Irish of Gaeltacht children is changing as well.</p>
+  </div>
+</section>
+
+<section id="timeline">
+  <h2>Schools grew for fifty years while the tools changed underneath</h2>
+  <div class="lanes">
+    <div class="head"></div><div class="head schools">Standard and schools</div><div class="head tools">Tools</div>
+    <div class="yr">1958</div><div>The official written standard is published. It is next revised in 2012 and 2017.</div><div class="empty"></div>
+    <div class="yr">1972</div><div>11 primary and 5 post-primary Irish-medium schools outside the Gaeltacht.</div><div class="empty"></div>
+    <div class="yr">2006</div><div class="empty"></div><div>A 30-million-word corpus. Rule-based spelling and grammar checkers are in use.</div>
+    <div class="yr">2008–09</div><div class="empty"></div><div>Irish predictive text arrives on phones.</div>
+    <div class="yr">2015–22</div><div class="empty"></div><div>Annotated tweet collections and the first language model trained only on Irish.</div>
+    <div class="yr">2019/20</div><div>Enrolment outside the Gaeltacht peaks at 48,518 pupils.</div><div class="empty"></div>
+    <div class="yr">2023/24</div><div>46,933 pupils, the first fall in fifty years.</div><div class="empty"></div>
+    <div class="yr">2024</div><div class="empty"></div><div>The first large language model adapted for Irish, and a national corpus of 101 million words.</div>
+    <div class="yr">2025</div><div>First State policy for Irish-medium schooling outside the Gaeltacht. Northern Ireland reaches 7,811 pupils, from 1,602 in 2001.</div><div>On a grammar test, fluent speakers score 90.1% and the best model 73.5%.</div>
+  </div>
+  <div class="measure" style="margin-top:1.6rem">
+    <p>Until about 2022 the tools checked what people wrote. Now they write Irish themselves, and how good that Irish is depends on training text that nobody has audited. <a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/evolution.md">Full timeline with sources</a></p>
   </div>
 </section>
 
 <section id="gaps">
-  <div class="wrap">
-    <p class="kicker sans">Where the evidence stops</p>
-    <h2>Five gaps that matter most</h2>
-    <p class="sub">The repository lists eighteen. These are ranked by how much is missing against how feasible the work is.</p>
-    <div class="tablewrap">
-    <table>
-      <thead><tr><th>Gap</th><th>Why it is open</th><th>What would close it</th></tr></thead>
-      <tbody>
-        <tr><td><strong>Model errors against learner errors</strong></td><td>Models and fluent humans fail on different grammar contrasts. Nobody has compared the model pattern with the learner pattern.</td><td>Line up benchmark categories with published learner error categories. No new human data needed.</td></tr>
-        <tr><td><strong>Training-data provenance</strong></td><td>Most of the Irish Wikipedia was reportedly written by two non-fluent editors, and it feeds Irish language models.</td><td>Sample the sources and have fluent raters estimate the non-fluent and machine-translated share.</td></tr>
-        <tr><td><strong>Speaker background</strong></td><td>Online corpora record text and nothing about the writer.</td><td>Donated writing with a short background questionnaire.</td></tr>
-        <tr><td><strong>Sound versus text</strong></td><td>The best-documented new-speaker features are in pronunciation. All the computational evidence is about spelling and vocabulary.</td><td>Acoustic measurement in learner recordings that speech projects already hold, with consent.</td></tr>
-        <tr><td><strong>Generative AI in Irish-medium classrooms</strong></td><td>A government advisory paper warns of a divide for Gaelscoileanna. No study has observed what pupils and teachers do.</td><td>Survey plus classroom observation, with ethics approval.</td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p class="sans" style="font-size:14.5px;margin-top:16px"><a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/gaps.md">All eighteen gaps</a></p>
-  </div>
+  <h2>Five questions nobody has answered yet</h2>
+  <div class="measure" style="margin-top:1rem"><p>Ordered by how much is missing against how doable the work is. The repository lists <a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/gaps.md">eighteen</a>.</p></div>
+  <ol class="gaps">
+    <li><div><h3>Do language models get wrong what learners get wrong?</h3><p>Models and fluent speakers fail on different parts of Irish grammar. Nobody has set the models' pattern beside the learners' pattern.</p><p>Needs no new data from people.</p></div></li>
+    <li><div><h3>What Irish are the models trained on?</h3><p>Most of the Irish Wikipedia was reportedly written by two editors without fluent Irish, and it feeds Irish language models.</p><p>Needs fluent readers to rate a sample of the sources.</p></div></li>
+    <li><div><h3>Who is writing?</h3><p>Online collections hold text and nothing about the writer.</p><p>Needs donated writing with a few background questions.</p></div></li>
+    <li><div><h3>What about sound?</h3><p>The best-documented features of new speakers' Irish are in pronunciation. Every computational result so far is about spelling and vocabulary.</p><p>Needs measurement of recordings that speech projects already hold, with consent.</p></div></li>
+    <li><div><h3>What are pupils and teachers doing with generative AI?</h3><p>A government advisory paper warns of a divide for Irish-medium schools. No study has watched what happens in class.</p><p>Needs ethics approval and partner schools.</p></div></li>
+  </ol>
 </section>
 
 <section id="limits">
-  <div class="wrap">
-    <p class="kicker sans">Read this before citing</p>
-    <h2>Limits</h2>
-    <details open><summary>The data is old and from one platform</summary><p>The tweets date from 2009 to 2019. Young people's Irish now lives on video and private messaging, where no corpus exists.</p></details>
-    <details><summary>The counts are small</summary><p>The mutation result rests on 25 unmarked cases in total. Intervals are wide.</p></details>
-    <details><summary>The rules assume the written standard</summary><p>Legitimate dialect forms can be flagged. The word lists are short and were built by a non-speaker.</p></details>
-    <details><summary>There is no single "Gaelscoil Irish"</summary><p>In the main study of pupil speech, error rates ranged from 20.5% to 41.6% across schools, and native-speaker Irish is itself changing.</p></details>
-    <details><summary>No children's data, by design</summary><p>Nothing here was collected from or about children, no platform was scraped, and only aggregate statistics are published. The feature extractor is not suitable for grading writing or profiling people.</p></details>
-    <details><summary>Search coverage</summary><p>The literature search ran in English-language indexes and will have missed work published in Irish. Sources read only in part are marked in the paper.</p></details>
-  </div>
+  <h2>Before you cite this</h2>
+  <ul class="limits">
+    <li>It is an undergraduate working paper, version 0.3, dated 16 November 2026. It has not been peer reviewed.</li>
+    <li>No fluent Irish speaker has checked the examples or the word lists yet.</li>
+    <li>The literature search, the code and the drafting were done with an AI assistant under the author's direction.</li>
+    <li>The tweets are from one platform and stop in 2019.</li>
+    <li>The mutation results rest on 25 cases in total.</li>
+    <li>No data from or about children was collected, and no platform was scraped. Only totals are published.</li>
+  </ul>
 </section>
 
-<section id="use">
-  <div class="wrap">
-    <p class="kicker sans">Open code</p>
-    <h2>Reproduce it</h2>
-    <p class="sub">Python 3.9 or later, standard library only. The treebanks download from their own repositories under their own licences.</p>
+<section id="run">
+  <h2>Run it yourself</h2>
+  <div class="measure" style="margin-top:1rem"><p>Python 3.9 or later, nothing to install. The two text collections download from their own repositories under their own licences.</p></div>
 <pre>git clone https://github.com/DenC-dev/irish-lang-research
 cd irish-lang-research
 ./scripts/fetch_ud.sh
@@ -225,19 +322,65 @@ python3 -I scripts/compare_treebanks.py --idt external/UD_Irish-IDT \
 python3 -I scripts/compare_cohorts.py --twittirish external/UD_Irish-TwittIrish --out results
 python3 -I scripts/clause_density.py --idt external/UD_Irish-IDT \
     --twittirish external/UD_Irish-TwittIrish --out results</pre>
-    <ul class="plain">
-      <li><a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/overview.md">Literature overview with evidence labels and bibliography</a></li>
-      <li><a href="https://github.com/DenC-dev/irish-lang-research/tree/main/results">Full result tables</a></li>
-      <li><a href="https://github.com/DenC-dev/irish-lang-research/blob/main/ETHICS.md">Data rules</a></li>
-    </ul>
-  </div>
+  <ul class="links">
+    <li><a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/overview.md">Literature overview and bibliography</a></li>
+    <li><a href="https://github.com/DenC-dev/irish-lang-research/tree/main/results">Full result tables</a></li>
+    <li><a href="https://github.com/DenC-dev/irish-lang-research/blob/main/ETHICS.md">Data rules</a></li>
+  </ul>
 </section>
 
-<footer class="sans">
-  <div class="wrap">
-    <p>Síneadh is a project by Dennis Crowley, Florida State University. Code: MIT. Text: CC BY 4.0. Data: UD Irish-IDT (CC BY-SA 3.0) and UD Irish-TwittIrish (CC BY-SA 4.0), not redistributed.</p>
-    <p>Corrections from Irish speakers and linguists are welcome through the repository's issue tracker.</p>
-  </div>
+<footer>
+  <p>Síneadh is a project by Dennis Crowley, Florida State University. Code under MIT, text under CC BY 4.0. The text collections are UD Irish-IDT (CC BY-SA 3.0) and UD Irish-TwittIrish (CC BY-SA 4.0) and are not redistributed here.</p>
+  <p>If you speak Irish and something here is wrong, please open an issue on the repository.</p>
 </footer>
+
+</main>
+</div>
+
+<script>
+(function(){
+  var FADA={ta:"tá",nil:"níl",bhi:"bhí",ni:"ní",tu:"tú",si:"sí",ca:"cá",cen:"cén",la:"lá",slan:"slán",
+    failte:"fáilte",feidir:"féidir",fein:"féin",mor:"mór",og:"óg",inne:"inné",amarach:"amárach",
+    muinteoir:"múinteoir",leir:"léir",brea:"breá",dha:"dhá",tri:"trí",cuig:"cúig",eireann:"éireann",
+    oiche:"oíche",anios:"aníos",sasta:"sásta",aris:"arís",deanamh:"déanamh",eigin:"éigin"};
+  var ECL={b:"m",c:"g",d:"n",f:"bh",g:"n",p:"b",t:"d"};
+  var ECLIPSED=["mb","gc","nd","bhf","ng","bp","dt"];
+  var LETTERS="A-Za-zÁÉÍÓÚáéíóú";
+  var SPLIT=new RegExp("["+LETTERS+"]+(?:[-'’]["+LETTERS+"]+)*|[^"+LETTERS+"]+","g");
+  var WORD=new RegExp("^["+LETTERS+"]");
+  var input=document.getElementById("try"),out=document.getElementById("out"),notes=document.getElementById("notes");
+  if(!input||!out||!notes)return;
+
+  function el(tag,text){var e=document.createElement(tag);if(text!=null)e.textContent=text;return e;}
+  function ga(t){var i=el("i",t);i.lang="ga";return i;}
+  function note(parts,cls){var li=el("li");if(cls)li.className=cls;
+    parts.forEach(function(p){li.appendChild(typeof p==="string"?document.createTextNode(p):p);});notes.appendChild(li);}
+
+  function run(){
+    var text=input.value,parts=text.match(SPLIT)||[];
+    out.textContent="";notes.textContent="";
+    var prev="",found=0;
+    parts.forEach(function(tok){
+      if(!WORD.test(tok)){out.appendChild(document.createTextNode(tok));return;}
+      var low=tok.toLowerCase(),first=low.charAt(0),flag=false;
+      if(FADA[low]){
+        flag=true;note([ga(tok),": the length mark is missing (",ga(FADA[low]),")."]);
+      }else if((prev==="mo"||prev==="do")&&low.length>1&&"bcdfgmpst".indexOf(first)>-1&&low.charAt(1)!=="h"
+          &&!(first==="s"&&"cfmptv".indexOf(low.charAt(1))>-1)&&tok.charAt(0)===first){
+        flag=true;note([ga(tok)," after ",ga(prev),": the standard writes lenition (",ga(first+"h"+tok.slice(1)),")."]);
+      }else if((prev==="ár"||prev==="bhur"||prev==="i")&&ECL[first]
+          &&!ECLIPSED.some(function(p){return low.indexOf(p)===0;})){
+        flag=true;note([ga(tok)," after ",ga(prev),": the standard writes eclipsis (",ga(ECL[first]+tok),")."]);
+      }
+      if(flag){found++;out.appendChild(el("mark",tok));}else{out.appendChild(document.createTextNode(tok));}
+      prev=(tok==="I")?"":low;
+    });
+    if(!text.trim()){note(["Type a sentence in Irish on the line above."],"none");}
+    else if(!found){note(["Nothing flagged. The rules only look for three things, so this is not a verdict on the sentence."],"none");}
+  }
+  input.addEventListener("input",run);
+  run();
+})();
+</script>
 </body>
 </html>
