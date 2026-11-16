@@ -34,13 +34,13 @@ Why it matters here: every "non-standard" count in this repository is measured a
 
 - **[E]** Younger traditional speakers favour analytic verb forms (*bheadh mé*) over the synthetic forms (*bheinn*) of older speakers, one of several generational shifts described by Ó Béarra (2007).
 - **[E]** English discourse markers are long established in native speech. Among ten native-speaker preschool leaders, 78% of intrasentential switches came from a small set of discourse markers (Hickey 2009). Hickey describes a path from one-off switch to borrowing to loanword that may displace the Irish form.
-- **[E]** Among Conamara children aged 10 to 13, Irish with code-switching was the norm, and it did not disturb Irish syntax or the flow of speech (Nic Leoid 2023).
+- **[E]** Among Conamara speakers aged 10 to 13, Irish with code-switching was the norm, and it did not disturb Irish syntax or the flow of speech (Nic Leoid 2023).
 - **[E]** Grammatical gender marking and vocabulary are weakening under reduced input (Nic Fhlannchadha and Hickey 2021; Péterváry et al. 2014).
 
 ### Outside the Gaeltacht
 
 - **[E]** The best-documented differences are in sound. Dublin new speakers tend to lose the contrast between palatalised and non-palatalised consonants, with palatalisation becoming tied to the neighbouring vowel as a tendency (Snesareva 2017, 2018).
-- **[E, single study reported in the press by its author]** Comparing radio newsreaders, Ó Broin found Gaeltacht speakers producing about 15 subordinate clauses per 10 sentences against 6 to 8 for urban speakers, with similar vocabulary size and English never above 4% of any speaker's words (Ó Broin c. 2010, 2013). He raises "pidgin" and "creole" as possible labels. Those terms are contested, and section 3 of the overview explains why this repository avoids them.
+- **[E, single study reported in the press by its author]** Comparing radio newsreaders, Ó Broin found Gaeltacht speakers producing about 15 subordinate clauses per 10 sentences against 6 to 8 for urban speakers, with similar vocabulary size and English never above 4% of any speaker's words (Ó Broin 2010, 2013). He raises "pidgin" and "creole" as possible labels. Those terms are contested, and section 3 of the overview explains why this repository avoids them.
 
 **The key asymmetry:** the changes that linguists have documented most firmly in new-speaker Irish are phonological and syntactic-complexity changes in speech. The computational evidence is almost entirely about spelling and vocabulary in writing. The two literatures are measuring different layers.
 
@@ -114,8 +114,8 @@ See gap 9 in [`gaps.md`](gaps.md) and [`results/clause_density.md`](../results/c
 - Irish Times (2025). Irish-language education policy "ignores elephant in the room", advocacy groups warn. 7 November 2025. <https://www.irishtimes.com/politics/2025/11/07/irish-language-education-policy-ignores-elephant-in-the-room-advocacy-groups-warn>
 - Lonergan, L. et al. (2023b). Towards spoken dialect identification of Irish. *SIGUL 2023*. <https://arxiv.org/abs/2307.07436>
 - Nic Leoid, N. (2023). *Structure and functions of Irish-English codeswitching as used by young Conamara Gaeltacht speakers*. PhD thesis, University of Edinburgh. † <https://era.ed.ac.uk/handle/1842/41059>
-- Ó Béarra, F. (2007). Late Modern Irish and the dynamics of language change and language death. † (Year recalled.) <https://publishup.uni-potsdam.de/files/1750/260_269.pdf>
-- Ó Broin, B. (c. 2010). Schism fears for Gaeilgeoirí. *Irish Times*. (Publication date not shown in my source.) <https://www.irishtimes.com/life-and-style/people/schism-fears-for-gaeilgeoiri-1.1269494>
+- Ó Béarra, F. (2007). Late Modern Irish and the dynamics of language change and language death. In H. L. C. Tristram (ed.), *The Celtic Languages in Contact*, 260-269. Potsdam University Press. <https://publishup.uni-potsdam.de/files/1750/260_269.pdf>
+- Ó Broin, B. (2010). Schism fears for Gaeilgeoirí. *Irish Times*, 16 January 2010. <https://www.irishtimes.com/life-and-style/people/schism-fears-for-gaeilgeoiri-1.1269494>
 - Ó Broin, B. (2013). The changing Irish language demographic. *MultiLingual* 135. † <https://sacsanua.blogspot.com/2013/04/the-changing-irish-language-demographic.html>
 - Salimi, Fatemi and Laitinen (2025). New sources of large-scale evidence: introducing a real-time global Bluesky stream. Conference abstract. <https://uefconnect.uef.fi/wp-content/uploads/2024/12/Salimi_Fatemi_Laitinen_abstract_Methods_XIX.pdf>
 - Scannell, K. (n.d.). Slides on minority languages, Wikipedia quality and LLM training data. <https://docs.google.com/presentation/d/13rAl4f5BiholQ3P-AF1PWTwMNSxTW9a8/htmlpresent>

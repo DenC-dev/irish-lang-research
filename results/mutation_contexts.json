@@ -1,0 +1,356 @@
+{
+  "selection": {
+    "min_n": 20,
+    "min_rate": 0.95,
+    "lenition_contexts": 18,
+    "eclipsis_contexts": 14,
+    "surface_vs_gold_agreement_pct": 99.48,
+    "surface_vs_gold_n": 36351
+  },
+  "contexts": {
+    "len": [
+      [
+        "de",
+        "NOUN",
+        "other",
+        250,
+        0.996
+      ],
+      [
+        "do",
+        "NOUN",
+        "other",
+        223,
+        0.991
+      ],
+      [
+        "mar",
+        "NOUN",
+        "other",
+        138,
+        0.9783
+      ],
+      [
+        "den",
+        "NOUN",
+        "other",
+        104,
+        0.9808
+      ],
+      [
+        "do",
+        "NOUN",
+        "dt",
+        89,
+        1.0
+      ],
+      [
+        "ba",
+        "ADJ",
+        "other",
+        87,
+        0.9885
+      ],
+      [
+        "aon",
+        "NOUN",
+        "other",
+        84,
+        0.9881
+      ],
+      [
+        "don",
+        "NOUN",
+        "other",
+        82,
+        0.9878
+      ],
+      [
+        "má",
+        "VERB",
+        "other",
+        66,
+        0.9848
+      ],
+      [
+        "ó",
+        "NOUN",
+        "other",
+        59,
+        1.0
+      ],
+      [
+        "de",
+        "NOUN",
+        "dt",
+        58,
+        1.0
+      ],
+      [
+        "ó",
+        "NOUN",
+        "dt",
+        51,
+        0.9804
+      ],
+      [
+        "mar",
+        "NOUN",
+        "dt",
+        49,
+        1.0
+      ],
+      [
+        "do",
+        "NOUN",
+        "s",
+        45,
+        1.0
+      ],
+      [
+        "dhá",
+        "NOUN",
+        "other",
+        44,
+        0.9773
+      ],
+      [
+        "mo",
+        "NOUN",
+        "other",
+        41,
+        1.0
+      ],
+      [
+        "mar",
+        "NOUN",
+        "s",
+        31,
+        1.0
+      ],
+      [
+        "seo a",
+        "NOUN",
+        "other",
+        22,
+        1.0
+      ]
+    ],
+    "ecl": [
+      [
+        "i",
+        "NOUN",
+        "other",
+        741,
+        0.9973
+      ],
+      [
+        "go",
+        "VERB",
+        "other",
+        399,
+        1.0
+      ],
+      [
+        "i",
+        "NOUN",
+        "dt",
+        199,
+        1.0
+      ],
+      [
+        "nach",
+        "VERB",
+        "other",
+        96,
+        1.0
+      ],
+      [
+        "go",
+        "VERB",
+        "dt",
+        76,
+        1.0
+      ],
+      [
+        "chur i",
+        "NOUN",
+        "other",
+        50,
+        1.0
+      ],
+      [
+        "ina",
+        "VERB",
+        "other",
+        39,
+        1.0
+      ],
+      [
+        "dá",
+        "VERB",
+        "other",
+        35,
+        1.0
+      ],
+      [
+        "an",
+        "VERB",
+        "other",
+        32,
+        1.0
+      ],
+      [
+        "agus go",
+        "VERB",
+        "other",
+        32,
+        1.0
+      ],
+      [
+        "agus i",
+        "NOUN",
+        "other",
+        30,
+        1.0
+      ],
+      [
+        "atá i",
+        "NOUN",
+        "other",
+        28,
+        1.0
+      ],
+      [
+        "nach",
+        "VERB",
+        "dt",
+        24,
+        1.0
+      ],
+      [
+        "dá",
+        "VERB",
+        "dt",
+        21,
+        1.0
+      ]
+    ]
+  },
+  "IDT_heldout": {
+    "len": {
+      "contexts": 254,
+      "expected": 248,
+      "other_mutation": 3,
+      "unmarked": 3,
+      "unmarked_pct": 1.18,
+      "unmarked_ci95": [
+        0.4,
+        3.4
+      ],
+      "other_mutation_pct": 1.18,
+      "foreign_targets_excluded": 0
+    },
+    "ecl": {
+      "contexts": 295,
+      "expected": 295,
+      "other_mutation": 0,
+      "unmarked": 0,
+      "unmarked_pct": 0.0,
+      "unmarked_ci95": [
+        0.0,
+        1.3
+      ],
+      "other_mutation_pct": 0.0,
+      "foreign_targets_excluded": 0
+    }
+  },
+  "TwittIrish": {
+    "len": {
+      "contexts": 388,
+      "expected": 349,
+      "other_mutation": 2,
+      "unmarked": 37,
+      "unmarked_pct": 9.54,
+      "unmarked_ci95": [
+        7.0,
+        12.9
+      ],
+      "other_mutation_pct": 0.52,
+      "foreign_targets_excluded": 4
+    },
+    "ecl": {
+      "contexts": 424,
+      "expected": 416,
+      "other_mutation": 4,
+      "unmarked": 4,
+      "unmarked_pct": 0.94,
+      "unmarked_ci95": [
+        0.4,
+        2.4
+      ],
+      "other_mutation_pct": 0.94,
+      "foreign_targets_excluded": 1
+    }
+  },
+  "TwittIrish_by_sample": {
+    "LTC": {
+      "len": {
+        "contexts": 188,
+        "expected": 164,
+        "other_mutation": 1,
+        "unmarked": 23,
+        "unmarked_pct": 12.23,
+        "unmarked_ci95": [
+          8.3,
+          17.7
+        ],
+        "other_mutation_pct": 0.53,
+        "foreign_targets_excluded": 3
+      },
+      "ecl": {
+        "contexts": 199,
+        "expected": 192,
+        "other_mutation": 4,
+        "unmarked": 3,
+        "unmarked_pct": 1.51,
+        "unmarked_ci95": [
+          0.5,
+          4.3
+        ],
+        "other_mutation_pct": 2.01,
+        "foreign_targets_excluded": 0
+      }
+    },
+    "NTC": {
+      "len": {
+        "contexts": 200,
+        "expected": 185,
+        "other_mutation": 1,
+        "unmarked": 14,
+        "unmarked_pct": 7.0,
+        "unmarked_ci95": [
+          4.2,
+          11.4
+        ],
+        "other_mutation_pct": 0.5,
+        "foreign_targets_excluded": 1
+      },
+      "ecl": {
+        "contexts": 225,
+        "expected": 224,
+        "other_mutation": 0,
+        "unmarked": 1,
+        "unmarked_pct": 0.44,
+        "unmarked_ci95": [
+          0.1,
+          2.5
+        ],
+        "other_mutation_pct": 0.0,
+        "foreign_targets_excluded": 1
+      }
+    },
+    "p_len_unmarked": 0.0794,
+    "p_ecl_unmarked": 0.2584
+  }
+}

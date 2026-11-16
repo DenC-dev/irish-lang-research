@@ -1,6 +1,6 @@
 # Gap register
 
-*Version 0.2, 16 November 2026. Extends section 9 of [`overview.md`](overview.md). Sources not in the overview's bibliography are listed in [`evolution.md`](evolution.md). "Not found" means my searches did not turn it up, which is weaker than "does not exist".*
+*Version 0.4, 16 November 2026. Extends section 9 of [`overview.md`](overview.md). Sources not in the overview's bibliography are listed in [`evolution.md`](evolution.md). "Not found" means my searches did not turn it up, which is weaker than "does not exist".*
 
 Gaps 1 to 5 were in version 0.1 and are restated briefly. Gaps 6 to 18 are new.
 
@@ -8,15 +8,15 @@ Gaps 1 to 5 were in version 0.1 and are restated briefly. Gaps 6 to 18 are new.
 
 | # | Gap | Evidence it is a gap | What would close it |
 |---|---|---|---|
-| 1 | No open corpus of children's written or typed Irish | Not found; largest children's text is from the 1930s | Consented school writing samples, released as aggregates or behind access control |
-| 2 | Child speech data is tiny | The CHILDES Irish corpus follows one Gaeltacht child from age 1;5 (Cameron-Faulkner and Hickey 2011); Nic Leoid (2023) covers Conamara 10 to 13 year olds; nothing comparable for immersion pupils since Ó Duibhir's 2000s recordings | A new immersion speech corpus built to the same protocol as the Gaeltacht ones |
+| 1 | No open corpus of pupils' written or typed Irish | Not found; the largest body of school writing is from the 1930s | Consented school writing samples, released as aggregates or behind access control |
+| 2 | Speech data from young speakers is tiny | One first-language acquisition corpus follows a single Gaeltacht family (Cameron-Faulkner and Hickey 2011); Nic Leoid (2023) covers Conamara 10 to 13 year olds; nothing comparable for immersion pupils since Ó Duibhir's 2000s recordings | A new immersion speech corpus built to the same protocol as the Gaeltacht ones |
 | 3 | No speaker background in any online corpus | TwittIrish reports no L1/L2 information | Data donation with a short background questionnaire |
 | 4 | No longitudinal data | Called for again in the 2025 Gaeloideachas review | Follow one cohort from 6th class through post-primary |
 | 5 | Nothing on video and private messaging platforms | Only journalism found | Consent-based collection; public Bluesky stream as a partial substitute (Salimi et al. 2025), untested for Irish |
-| 6 | **Twitter-era corpora are frozen** | Free research access ended; the newest annotated tweets are from 2019 | Same as 5 |
+| 6 | **Twitter-era corpora are frozen** | Free research access ended; the newest annotated tweets are from 2019; no open Irish tweet collection after 2019 was found | `scripts/collect_posts.py` (paid official access, yearly totals only), not yet run |
 | 7 | **Irish-medium scholarship is under-indexed** | My searches run in English-language indexes; key work (for example *An Chonair Chaoch*, 2012) is in Irish and was only visible through citations | A search pass in Irish, and reading the Irish-language sources directly |
 
-**Correction to version 0.1:** the overview said child speech was "only now being collected". That was wrong as a general statement. A small first-language child corpus has existed since about 2011. The gap is its size and the absence of immersion learners.
+**Correction to version 0.1:** the overview said speech from young speakers was "only now being collected". That was wrong as a general statement. A small first-language acquisition corpus has existed since about 2011. The gap is its size and the absence of immersion learners.
 
 ## B. Layers of language that computational work has not touched
 

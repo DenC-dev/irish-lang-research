@@ -92,6 +92,35 @@ def eclipsis_candidates(tokens: list[str]):
             yield i + 1, trig.lower(), nxt
 
 
+def mutation_context_counts(tokens: list[str]) -> dict:
+    """Counts with denominators, for raw text without part-of-speech tags.
+
+    Lenition contexts are mo/do before a lower-case word with a lenitable
+    initial. Eclipsis contexts are ár/bhur/lower-case i before a word with an
+    eclipsable initial. A lenited word in an eclipsis context is not counted
+    as unmarked, since some dialects lenite there.
+    """
+    c = {"len_contexts": 0, "len_unmarked": 0, "ecl_contexts": 0, "ecl_unmarked": 0}
+    for i in range(len(tokens) - 1):
+        trig, nxt = tokens[i], tokens[i + 1]
+        if not is_word(nxt) or len(nxt) < 2:
+            continue
+        low = trig.lower()
+        if low in LENITION_TRIGGERS and not nxt[0].isupper() and (
+            _lenition_expected(nxt) or (_is_lenited(nxt) and nxt[0].lower() in LENITABLE)
+        ):
+            c["len_contexts"] += 1
+            c["len_unmarked"] += not _is_lenited(nxt)
+        if low in ECLIPSIS_TRIGGERS and trig != "I":
+            w = nxt.lower()
+            if w.startswith(ECLIPSED_PREFIXES):
+                c["ecl_contexts"] += 1
+            elif w[0] in ECLIPSIS:
+                c["ecl_contexts"] += 1
+                c["ecl_unmarked"] += not _is_lenited(nxt)
+    return c
+
+
 def copula_candidates(tokens: list[str]):
     """Yield indices of `tá/bhí/níl + pronoun + class noun`, the pattern where
     the standard language uses the copula (Is múinteoir é). Lexicon-bound."""

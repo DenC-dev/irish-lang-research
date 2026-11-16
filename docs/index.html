@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Síneadh: school-acquired and online Irish, measured</title>
-<meta name="description" content="A working paper and open code on what computational linguistics can and cannot yet say about Irish learned in Irish-medium schools and Irish written online.">
+<meta name="description" content="A paper and open code on what computational linguistics can and cannot yet say about Irish learned in Irish-medium schools and Irish written online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -146,7 +146,7 @@ footer p + p{margin-top:.6rem}
 
 <section class="opening">
   <h1>How far does typed Irish sit from the written standard?</h1>
-  <p class="lede">Síneadh is a working paper and a small set of open rules for measuring that distance in Irish learned at school and Irish written online. Read <a href="https://github.com/DenC-dev/irish-lang-research/blob/main/paper/sineadh.pdf">the paper</a> or get <a href="https://github.com/DenC-dev/irish-lang-research">the code</a>.</p>
+  <p class="lede">Síneadh is a paper and a small set of open rules for measuring that distance in Irish learned at school and Irish written online. Read <a href="https://github.com/DenC-dev/irish-lang-research/blob/main/paper/sineadh.pdf">the paper</a> or get <a href="https://github.com/DenC-dev/irish-lang-research">the code</a>.</p>
 
   <div class="ruled">
     <div class="row"><span class="who">Edited prose</span><span class="text" lang="ga">Bhí mo chara ag ár dteach inné.</span></div>
@@ -170,17 +170,17 @@ footer p + p{margin-top:.6rem}
 
   <div class="ledger">
     <div class="item">
-      <div class="what">Lenition left unwritten after <i>mo</i> or <i>do</i><small>3 of 474 places in edited text, 18 of 177 in tweets</small></div>
+      <div class="what">Lenition left unwritten<small>In all 18 settings where edited Irish nearly always writes it: 3 of 254 places in edited text, 37 of 388 in tweets</small></div>
       <div>
-        <div class="pair"><span>Edited</span><div class="bar" style="width:6%"></div><b>0.6%</b></div>
-        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>10.2%</b></div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:12.6%"></div><b>1.2%</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>9.5%</b></div>
       </div>
     </div>
     <div class="item">
-      <div class="what">Eclipsis left unwritten after <i>ár</i>, <i>bhur</i> or <i>i</i><small>2 of 881 places in edited text, 7 of 139 in tweets</small></div>
+      <div class="what">Eclipsis left unwritten<small>In all 14 such settings: 0 of 295 places in edited text, 4 of 424 in tweets. Too close to call a difference</small></div>
       <div>
-        <div class="pair"><span>Edited</span><div class="bar" style="width:4%"></div><b>0.2%</b></div>
-        <div class="pair"><span>Tweets</span><div class="bar t" style="width:100%"></div><b>5.0%</b></div>
+        <div class="pair"><span>Edited</span><div class="bar" style="width:0"></div><b>0.0%</b></div>
+        <div class="pair"><span>Tweets</span><div class="bar t" style="width:9.5%"></div><b>0.9%</b></div>
       </div>
     </div>
     <div class="item">
@@ -205,7 +205,7 @@ footer p + p{margin-top:.6rem}
       </div>
     </div>
   </div>
-  <p class="key">Each pair of bars is scaled to its own larger value. The mutation counts are small: the tweet figure for lenition could plausibly lie anywhere from 6.5% to 15.5%.</p>
+  <p class="key">The two mutation rows share one scale. Every other pair is scaled to its own larger value. The tweet figure for lenition could plausibly lie anywhere from 7.0% to 12.9%. An earlier version of this page reported a larger eclipsis gap from a narrower rule; the wider check did not support it.</p>
 </section>
 
 <section id="drift">
@@ -240,7 +240,7 @@ footer p + p{margin-top:.6rem}
       </g>
     </svg>
     <div class="measure">
-      <p>The tweet collection is two samples, one earlier and one later. In the later one, missing length marks fall by two thirds and English falls too. Emoji is the one line going up.</p>
+      <p>The tweet collection is two samples, one earlier and one later. In the later one, missing length marks fall by two thirds and English falls too. Emoji is the one line going up. Unwritten lenition also drops, from 12.2% to 7.0%, though at these counts that could be chance.</p>
       <ul>
         <li>Phones gained Irish keyboards and predictive text over these years, which would produce this pattern.</li>
         <li>So would more institutions and professionals tweeting in Irish.</li>
@@ -264,7 +264,7 @@ footer p + p{margin-top:.6rem}
     <li>Still learning the rule</li>
   </ul>
   <div class="measure" style="margin-top:1.4rem">
-    <p>There is also no single "Gaelscoil Irish" to detect. In the main study of pupils' speech, the share of utterances with an error ran from 20.5% in one school to 41.6% in another, and the Irish of Gaeltacht children is changing as well.</p>
+    <p>There is also no single "Gaelscoil Irish" to detect. In the main study of pupils' speech, the share of utterances with an error ran from 20.5% in one school to 41.6% in another, and the Irish of young Gaeltacht speakers is changing as well.</p>
   </div>
 </section>
 
@@ -302,12 +302,13 @@ footer p + p{margin-top:.6rem}
 <section id="limits">
   <h2>Before you cite this</h2>
   <ul class="limits">
-    <li>It is an undergraduate working paper, version 0.3, dated 16 November 2026. It has not been peer reviewed.</li>
-    <li>No fluent Irish speaker has checked the examples or the word lists yet.</li>
+    <li>This is version 0.4, dated 16 November 2026. It has not been peer reviewed.</li>
+    <li>The author speaks Irish. A second speaker has not yet checked the examples or the word lists.</li>
     <li>The literature search, the code and the drafting were done with an AI assistant under the author's direction.</li>
-    <li>The tweets are from one platform and stop in 2019.</li>
-    <li>The mutation results rest on 25 cases in total.</li>
-    <li>No data from or about children was collected, and no platform was scraped. Only totals are published.</li>
+    <li>The tweets are from one platform and stop in 2019. No open collection of later Irish tweets was found. The repository has a tool for gathering later posts through official access, and it has not been run yet.</li>
+    <li>The lenition result rests on 37 cases.</li>
+    <li>Nobody's age or background is recorded in the data, so nothing here is a claim about who wrote what.</li>
+    <li>No new data was collected from people and no platform was scraped. Only totals are published. <a href="https://github.com/DenC-dev/irish-lang-research/blob/main/docs/risks.md">Risk register</a></li>
   </ul>
 </section>
 
@@ -318,6 +319,8 @@ footer p + p{margin-top:.6rem}
 cd irish-lang-research
 ./scripts/fetch_ud.sh
 python3 -I scripts/compare_treebanks.py --idt external/UD_Irish-IDT \
+    --twittirish external/UD_Irish-TwittIrish --out results
+python3 -I scripts/mutation_contexts.py --idt external/UD_Irish-IDT \
     --twittirish external/UD_Irish-TwittIrish --out results
 python3 -I scripts/compare_cohorts.py --twittirish external/UD_Irish-TwittIrish --out results
 python3 -I scripts/clause_density.py --idt external/UD_Irish-IDT \
@@ -369,14 +372,14 @@ python3 -I scripts/clause_density.py --idt external/UD_Irish-IDT \
           &&!(first==="s"&&"cfmptv".indexOf(low.charAt(1))>-1)&&tok.charAt(0)===first){
         flag=true;note([ga(tok)," after ",ga(prev),": the standard writes lenition (",ga(first+"h"+tok.slice(1)),")."]);
       }else if((prev==="ár"||prev==="bhur"||prev==="i")&&ECL[first]
-          &&!ECLIPSED.some(function(p){return low.indexOf(p)===0;})){
+          &&low.charAt(1)!=="h"&&!ECLIPSED.some(function(p){return low.indexOf(p)===0;})){
         flag=true;note([ga(tok)," after ",ga(prev),": the standard writes eclipsis (",ga(ECL[first]+tok),")."]);
       }
       if(flag){found++;out.appendChild(el("mark",tok));}else{out.appendChild(document.createTextNode(tok));}
       prev=(tok==="I")?"":low;
     });
     if(!text.trim()){note(["Type a sentence in Irish on the line above."],"none");}
-    else if(!found){note(["Nothing flagged. The rules only look for three things, so this is not a verdict on the sentence."],"none");}
+    else if(!found){note(["Nothing flagged. This box checks only three things (the full analysis covers 32 settings), so this is not a verdict on the sentence."],"none");}
   }
   input.addEventListener("input",run);
   run();

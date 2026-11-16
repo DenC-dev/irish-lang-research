@@ -8,6 +8,7 @@ from .features import (  # noqa: F401
     analyse,
     eclipsis_candidates,
     lenition_candidates,
+    mutation_context_counts,
     strip_fada,
     tokenise,
 )

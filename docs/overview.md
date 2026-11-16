@@ -1,6 +1,6 @@
 # Contemporary Irish, Gaelscoileanna and the Internet: A Computational-Linguistics Overview
 
-*Version 0.2, 16 November 2026. Literature located by web search on that date; see section 10 for what that search could and could not cover. Continued in [`evolution.md`](evolution.md) (how the language, schools, technology and research have changed) and [`gaps.md`](gaps.md) (full gap register).*
+*Version 0.4, 16 November 2026. Literature located by web search on that date; see section 10 for what that search could and could not cover. Continued in [`evolution.md`](evolution.md) (how the language, schools, technology and research have changed) and [`gaps.md`](gaps.md) (full gap register).*
 
 ## How to read the evidence labels
 
@@ -38,7 +38,7 @@ Three cautions follow from the literature.
 
 **There is no single Gaelscoil variety. [E]** In the one sizeable spoken corpus, the share of utterances containing an error ranged from 20.5% to 41.6% across the all-Irish schools sampled, and pupils in Northern Ireland used Ulster forms such as *thig* more than pupils in the Republic (Ó Duibhir and Garland 2010). Schools differ in intake, teacher dialect, region and age profile. A feature list describes tendencies in samples, and treating it as the grammar of a dialect goes beyond the evidence.
 
-**Native-speaker Irish is not a fixed benchmark. [E]** Nic Fhlannchadha and Hickey (2021) tested 135 proficient adults and 306 children aged 6 to 13 in Gaeltacht communities on grammatical gender and concluded that children there are exposed to considerable variability in the adult input. Péterváry et al. (2014) recorded 50 Conamara pupils aged 7 to 12 from Irish-only homes and found their English outstripping their Irish. Gaeltacht schools also enrol children with very different home exposure (Antonijević et al. n.d.). A learner/native contrast therefore cannot be drawn by school type or postcode.
+**Native-speaker Irish is not a fixed benchmark. [E]** Nic Fhlannchadha and Hickey (2021) tested 135 proficient adults and 306 young speakers aged 6 to 13 in Gaeltacht communities on grammatical gender and concluded that young speakers there are exposed to considerable variability in the adult input. Péterváry et al. (2014) recorded 50 Conamara pupils aged 7 to 12 from Irish-only homes and found their English outstripping their Irish. Gaeltacht schools also enrol pupils with very different home exposure (Antonijevic, Durham and Ní Chonghaile 2017). A learner/native contrast therefore cannot be drawn by school type or postcode.
 
 **The labels carry ideology. [E]** In a matched-sample experiment, teachers rated traditional Gaeltacht speech significantly more positively than post-Gaeltacht speech when asked directly (Ó Murchadha and Kavanagh 2022). O'Rourke and Walsh (2015) show that idealising the traditional speaker can undermine new speakers' sense of legitimacy. Any tool that scores text as "learner-like" inherits this politics.
 
@@ -92,14 +92,14 @@ That last point matters most for this overview. Online corpora record text, and 
 
 | Resource or method | What exists | What it can show | Main limitation or bias |
 |---|---|---|---|
-| **Reference corpora** | New Corpus for Ireland, c. 30m words (Kilgarriff et al. 2006); Corpus of Contemporary Irish, 14.9m (Ní Loingsigh et al. 2017); Corpas Náisiúnta na Gaeilge, 101m words in phase 1, with a 6.5m-word spoken corpus planned and work running to 2029 (Ó Meachair et al. 2022, 2026) | Frequencies, variant forms, change over time in published writing | Published and edited text; children and informal digital writing largely absent |
+| **Reference corpora** | New Corpus for Ireland, c. 30m words (Kilgarriff et al. 2006); Corpus of Contemporary Irish, 14.9m (Ní Loingsigh et al. 2017); Corpas Náisiúnta na Gaeilge, 101m words in phase 1, with a 6.5m-word spoken corpus planned and work running to 2029 (Ó Meachair et al. 2022, 2026) | Frequencies, variant forms, change over time in published writing | Published and edited text; school-age and informal digital writing largely absent |
 | **Treebanks** | UD Irish-IDT (news, fiction, web, legal, government); UD TwittIrish, 2,596 tweets | Quantified differences between edited and user-generated Irish | Tweets from 2009 to 2019; adults; one annotator for most of TwittIrish |
 | **Learner corpora** | TEG exam corpus, 150,000 to 200,000 words at B1 to C1 (Digital Plan 2022); An Corpas Cliste from the *An Scéalaí* platform, 44,093 stories and 5.7m words from second- and third-level learners (Ní Chiaráin et al. 2022); a Maynooth error-annotated corpus in development with COGG support (Maynooth University n.d.) | Error profiles by level; keystroke-level revision behaviour | Adult or exam settings; school type not reported; published paper gives no consent or anonymisation detail; automatic and manual error counts disagreed sharply |
 | **Spelling and grammar tools** | GaelSpell and An Gramadóir (Scannell); neural mutation prediction (Scannell 2020); orthographic standardisers (Scannell 2014; Ó Raghallaigh, Scannell and Dowling 2019) | Scalable candidate detection of non-standard forms | Built around the Caighdeán, so legitimate dialect forms are flagged; An Gramadóir was judged unfit for learner feedback in the Corpas Cliste study |
 | **Language models** | gaBERT, 7.9m sentences (Barry et al. 2022); UCCIX on Llama 2 (Tran et al. 2024); Qomhrá (McInerney et al. 2026) | Parsing gains (+10 LAS on tweets); surprisal or probing as a measure of distance from the standard | Training text is web crawl, Wikipedia, parallel and official text; Qomhrá's instruction data is LLM-translated |
 | **Model evaluation** | Irish-BLiMP, 1,020 minimal pairs: humans 90.1%, best model 73.5% (McGiff et al. 2025); IRLBench from Leaving Certificate papers (2025) | Which grammatical contrasts models do and do not control | Standard grammar only; fluent human raters; no dialect or informal items |
 | **Machine translation** | English-Irish NMT with human evaluation (Dowling 2022; Lankford, Afli and Way 2024) | Error typologies by fluency and accuracy | Training data dominated by public-administration translation |
-| **Speech** | ABAIR synthesis and recognition; Fotheidil transcription (Lonergan et al. 2022, 2023, 2024) | Dialect identification and dialect-wise error rates | Accuracy uneven across dialects even with balanced data; very little child speech data (Ulster University n.d.) |
+| **Speech** | ABAIR synthesis and recognition; Fotheidil transcription (Lonergan et al. 2022, 2023, 2024) | Dialect identification and dialect-wise error rates | Accuracy uneven across dialects even with balanced data; very little speech data from young speakers (Ulster University n.d.) |
 
 Three method-level observations.
 
@@ -126,7 +126,8 @@ From TwittIrish's own annotation: 5.9% of language-tagged tokens are English, 22
 How to read this:
 
 - The figures agree with the published ones (about a quarter of tweets multilingual; 2.5% orthographic variation), which is a sanity check on the code more than a new finding.
-- The mutation contrast is the new piece. Unmarked initial mutation after a handful of unambiguous triggers is roughly an order of magnitude more frequent in tweets than in edited prose. In IDT, 471 of 474 lenition contexts are lenited, so the rule itself is sound on standard text.
+- The mutation contrast is the new piece. In IDT, 471 of 474 lenition contexts are lenited, so the rule itself is sound on standard text.
+- **Superseded for mutation (version 0.4).** `scripts/mutation_contexts.py` replaces the hand-picked triggers with every context the edited treebank supports. Lenition holds up: unwritten in 9.5% of tweet contexts (37 of 388) against 1.2% in held-out edited text. Eclipsis does not: 0.9% (4 of 424) against 0.0%. The 5.0% eclipsis figure in the table above included lenited forms that are legitimate in some dialects and should be set aside. See `results/mutation_contexts.md`.
 - **The contrast does not show that tweeters are learners.** Unmarked mutation can reflect fast typing, autocorrect, English or brand-name nouns (3 of the 25 cases), dialect, or deliberate informality. The counts are small, the tweets predate 2020, and the eclipsis rule for *i* ignores some legitimate patterns.
 - The discourse markers that dominate pupils' speech are rare in tweets. That fits a speech/writing difference, although the comparison is across studies with different methods.
 
@@ -142,16 +143,16 @@ How to read this:
 
 ## 9. Gaps
 
-### Children's language
+### School-age language
 
-- No open corpus of children's written or typed Irish exists. The largest public children's text is the 1930s Schools' Collection (Ward 2025), which is a historical source.
+- No open corpus of pupils' written or typed Irish exists. The largest public body of school writing is the 1930s Schools' Collection (Ward 2025), which is a historical source.
 - The spoken immersion corpus is small, dated and not public.
 - No longitudinal data follow the same pupils from primary through post-primary or into adult use.
-- Child speech data is very small. A CHILDES corpus follows one first-language Gaeltacht child (Cameron-Faulkner and Hickey 2011), and a new project is collecting child-directed speech in the home for speech recognition (Ulster University n.d.). Nothing comparable exists for immersion pupils. (Corrected in version 0.2; see `gaps.md`.)
+- Speech data from young speakers is very small. One first-language acquisition corpus follows a single Gaeltacht family (Cameron-Faulkner and Hickey 2011), and a new project is recording speech in the home for speech recognition (Ulster University n.d.). Nothing comparable exists for immersion pupils. (Corrected in version 0.2; see `gaps.md`.)
 
 ### Privacy and ethics
 
-- Children's data fall under GDPR, and Ireland sets the digital age of consent at 16. Most platforms bar under-13s, so "children's Irish online" is largely private or out of scope by design.
+- Personal data fall under GDPR, with stricter rules for under-18s, and Ireland sets the digital age of consent at 16. Platforms set minimum ages, so the online writing of school-age users is largely private or out of scope by design.
 - **[H, my inference]** Re-identification risk is unusually high. With active public networks numbering in the hundreds, dialect, school and writing habits can identify a person even after usernames are removed. TwittIrish anonymised usernames, phone numbers and emails in 2023, which addresses direct identifiers only.
 - Platform access has tightened since 2023, so the existing tweet corpora are hard to extend or replicate.
 - The practical route is consent-based collection inside schools with guardians' permission, data donation, aggregate-only release, and governance shared with Irish-medium education bodies. This repository therefore ships constructed examples and aggregate statistics only (`ETHICS.md`).
@@ -189,7 +190,7 @@ So a study that links immersion-acquired Irish to digital writing using computat
 |---|---|
 | Immersion pupils reach fluent, communicatively effective Irish with persistent non-target features in specific areas | E |
 | Those features vary by school and region | E (one study) |
-| Gaeltacht children's Irish is also changing under contact | E |
+| The Irish of young Gaeltacht speakers is also changing under contact | E |
 | Irish tweets differ measurably from edited Irish in spelling, lexis and syntax | E, replicated here (P) |
 | Unmarked mutation is far more frequent in tweets than in edited text | P |
 | Online non-standard features are driven by school-acquired Irish | H, untested |
@@ -202,7 +203,7 @@ So a study that links immersion-acquired Irish to digital writing using computat
 
 Entries marked † were identified from repository or publisher records during this search but not opened in full; check details against the original before citing.
 
-- Antonijević, S. et al. (n.d.). Irish and English sentence repetition task. University of Galway repository. † (Lead author inferred, please confirm.) <https://researchrepository.universityofgalway.ie/server/api/core/bitstreams/d9cdf9a7-fcc5-45dd-a9ae-4660d53736fd/content>
+- Antonijevic, S., Durham, R. and Ní Chonghaile, Í. (2017). Language performance of sequential bilinguals on an Irish and English sentence repetition task. *Linguistic Approaches to Bilingualism* 7(3-4), 359-393. † <https://doi.org/10.1075/lab.15026.ant>
 - Barry, J., Wagner, J., Cassidy, L., Cowap, A., Lynn, T., Walsh, A., Ó Meachair, M. J. and Foster, J. (2022). gaBERT: an Irish language model. *LREC 2022*. <https://arxiv.org/abs/2107.12930>
 - Cassidy, L. (2024). *Linguistic analysis and automatic dependency parsing of tweets in modern Irish*. PhD thesis, Dublin City University. † <https://doras.dcu.ie/29326/>
 - Cassidy, L., Lynn, T., Barry, J. and Foster, J. (2022). TwittIrish: a Universal Dependencies treebank of tweets in modern Irish. *ACL 2022*. <https://aclanthology.org/2022.acl-long.473/>
@@ -234,11 +235,11 @@ Entries marked † were identified from repository or publisher records during t
 - Ó Duibhir, P. (2009). *The spoken Irish of sixth-class pupils in Irish immersion schools*. PhD thesis, Trinity College Dublin. † <https://edepositireland.ie/handle/2262/78131>
 - Ó Duibhir, P. (2012). An instructional experiment in grammar teaching in Irish immersion. Slides, Immersion 2012, CARLA. <https://archive.carla.umn.edu/conferences/past/immersion2012/handouts/ODuibhir_GrammarTeachinginIrish_Oct2012.pdf>
 - Ó Duibhir, P. (2018). *Immersion Education: Lessons from a Minority Language Context*. Multilingual Matters. †
-- Ó Duibhir, P. and Garland, J. (2010). *Gaeilge labhartha na bpáistí i scoileanna lán-Ghaeilge in Éirinn / The spoken Irish of pupils in Irish-medium schools*. SCoTENS. (Read to roughly one third of the report; authorship as I recall it, please confirm on the title page.) <https://scotens.org/docs/spokenirish.pdf>
+- Ó Duibhir, P. and Garland, J. (2010). *Gaeilge labhartha na bpáistí i scoileanna lán-Ghaeilge i dTuaisceart na hÉireann / The spoken Irish of pupils in Irish-medium schools in Northern Ireland*. SCoTENS, December 2010. (Read to roughly one third of the report.) <https://scotens.org/docs/spokenirish.pdf>
 - Ó Duibhir, P., Ní Dhiorbháin, A. and Cosgrove, J. (2016). An inductive approach to grammar teaching in Grade 5 and 6 Irish immersion classes. *Journal of Immersion and Content-Based Language Education* 4(1). † <https://www.jbe-platform.com/content/journals/10.1075/jicb.4.1.02dui>
 - Ó Meachair, M. J., Bhreathnach, Ú. and Ó Cleircín, G. (2022). Introducing the National Corpus of Irish project. *CLTW 4*, 99-103. <https://aclanthology.org/2022.cltw-1.14>
 - Ó Meachair, M. J., Bhreathnach, Ú., Scannell, K., Měchura, M., Ó Raghallaigh, B. and Ó Cleircín, G. (2026). Corpas Náisiúnta na Gaeilge 2022-2029: a project overview. *CMLC 2026*, 63-65. <https://aclanthology.org/2026.cmlc-1.8/>
-- Ó Murchadha, N. and Kavanagh, L. (2022). Language ideologies in a minority context: an experimental study of teachers' responses to variation in Irish. *Journal of Sociolinguistics*. † (Year and title as I recall them.) <https://www.tara.tcd.ie/bitstreams/ace6ec77-2744-486c-8a5b-0b6fd91e49b9/download>
+- Ó Murchadha, N. and Kavanagh, L. (2022). Language ideologies in a minority context: an experimental study of teachers' responses to variation in Irish. *Journal of Sociolinguistics* 26(2), 197-220. <https://www.tara.tcd.ie/bitstreams/ace6ec77-2744-486c-8a5b-0b6fd91e49b9/download>
 - Ó Raghallaigh, B., Scannell, K. and Dowling, M. (2019). Improving full-text search results on dúchas.ie using language technology. *Celtic Language Technology Workshop 2019*. <https://aclanthology.org/W19-6909/>
 - O'Rourke, B. and Walsh, J. (2015). New speakers of Irish: shifting boundaries across time and space. *International Journal of the Sociology of Language* 231, 63-83. <https://doi.org/10.1515/ijsl-2014-0032>
 - O'Rourke, B. and Walsh, J. (2020). *New Speakers of Irish in the Global Context: New Revival?* Routledge. †
